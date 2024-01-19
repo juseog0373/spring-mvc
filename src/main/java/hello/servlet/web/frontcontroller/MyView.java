@@ -28,6 +28,6 @@ public class MyView {
     }
 
     private static void modelToRequestAttribute(Map<String, Object> model, HttpServletRequest request) {
-        model.forEach((key, value) -> request.setAttribute(key, value)); // 넘어온 값을 request 내장객체 저장소에 저장
+        model.forEach((key, value) -> request.setAttribute(key, value)); // 넘어온 값을 request 객체 저장소에 저장
     }
 }
