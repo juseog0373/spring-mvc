@@ -15,7 +15,7 @@ public class MappingController {
     }
 
     @GetMapping("/mapping-get-v2")
-    public String mapingGetV2() {
+    public String mappingGetV2() {
         log.info("mappingGetV2");
         return "ok";
     }
@@ -60,7 +60,6 @@ public class MappingController {
         return "ok";
     }
 
-    @ResponseBody
     @RequestMapping("/model-attribute-v2")
     public String modelAttributeV2(HelloData helloData) {
 
