@@ -1,5 +1,6 @@
 package hello.springmvc.basic.requestmapping;
 
+import hello.springmvc.basic.HelloData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,7 +46,27 @@ public class MappingController {
 
     @PostMapping(value = "/mapping-consume", consumes = "application/json")
     public String mappingConsumes() {
-        log.info("mappigConsume");
+        log.info("mappingConsume");
+        return "ok";
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v1")
+    public String modelAttributeV1(@ModelAttribute HelloData helloData) {
+
+        log.info("username = {}, age = {}", helloData.getUsername(), helloData.getAge());
+        log.info("helloData = {}", helloData);
+
+        return "ok";
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v2")
+    public String modelAttributeV2(HelloData helloData) {
+
+        log.info("username = {}, age = {}", helloData.getUsername(), helloData.getAge());
+        log.info("helloData = {}", helloData);
+
         return "ok";
     }
 }
